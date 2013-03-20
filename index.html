@@ -1,0 +1,85 @@
+<html style="height: 100%">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" />
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <title>OpenWall - Collage Social Networking </title>
+        <link type="text/css" rel="stylesheet" href="static/css/ui.notify.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/bootstrap-responsive.min.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/application.css" />
+        <script type="text/javascript" src="static/libs/load-min.js"></script>
+        <!--script type="text/javascript" src="static/libs/cordova-2.3.0.js"></script-->
+        <script type="text/javascript">
+           load('static/libs/jquery-1.9.0.js')
+                .then('static/libs/json2.js')
+                .then('static/libs/underscore.js')
+                .then('static/libs/bootstrap.min.js')
+                .then('static/libs/backbone.js')
+                .then('static/libs/howler.min.js')
+                .then('static/libs/qweb.js')
+                .then('static/js/models.js')
+                .then('static/js/people.js')
+                .then('static/js/home.js')
+                .then('static/js/core.js')
+                .thenRun(function () {
+                        QWeb.add_template("static/xml/template.xml");
+                        $(function() {
+       	                 window['openwall'] = new Application();
+       	                 Backbone.history.start();	
+	                   });
+	                   console.log("All javascript are loaded sucessfully.");
+                    });
+	       
+	       window.onerror = function(message, url, linenumber) {
+	            console.log("message: ", message);
+              alert("JavaScript error: " + message + " on line " + linenumber + " for " + url);
+           }
+    </script>
+</head>
+<body>
+        <!-- manage navigation bar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="" class="brand">OpenWall</a>
+          <div class="nav-collapse collapse" style="height: 0px;">
+            <ul class="nav">
+              <li class=""><a href="#courses">Courses</a></li>
+              <li class=""><a href="#infra">Infrastructure</a></li>
+              <li class=""><a href="#people">People</a></li>
+              <li class=""><a href="#events">Events</a></li>
+              <li class=""><a href="#career">Career</a></li>
+              <li class=""><a href="#feedback">Feedback</a></li>
+              <li class=""><a href="#aboutus">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 70px;">
+        <div id="screen_main" class="container row-fluid">
+        </div>
+        <div id="screen_view_configuration"  class="row-fluid" style="height: 90%;width: 90%;display:none;">view configuration</div>
+        <div id="screen_view_aboutus" class="row-fluid" style="height: 90%;width: 90%;display:none;">About Us</div>
+    </div>
+    
+    </body>
+</html>
+

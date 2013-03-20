@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template id="template" xml:space="preserve">
+<t t-name="viewlist">
+<div class="hero-unit">
+    <table class="table table-striped span ">
+        <thead>
+            <tr>
+                <t t-foreach="columns" t-as="column">
+                    <th><t t-esc="column"/></th>
+                </t>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+             <t t-call="viewlistitem"/>
+        </tbody>
+    </table>
+</div>
+</t>
+<t t-name="viewlistitem">
+ <t t-set="fields" t-value="[]"/>
+ <t t-js="fields"> var fields = _.keys(records[0]); </t>
+ <t t-foreach="records" t-as="record">
+   <tr> 
+        <t t-foreach="fields" t-as="field">
+            <td><t t-esc="record[field]"/></td>
+        </t>
+        <td><a t-att-href="'#edit/note:'+record.id"><i class="icon-edit"/></a></td>
+        <td><a t-att-href="'#delete/note:'+record.id"><i class="icon-trash"/></a></td>    
+   </tr>
+ </t>
+</t>
+<t t-name="kanban">
+<div >
+    <h1>People.</h1>
+    <p>We introduce expert IT people with quality works.</p>
+    <ul class="kanban-container">
+     <t t-foreach="records" t-as="record">
+         <li class="kanban_box">
+            <t t-call="people-kanban"/>
+         </li>
+     </t>
+    </ul>
+</div>
+</t>
+<t t-name="noteform">
+    <form>
+    </form>
+</t>
+<t t-name="menu">
+  <t t-foreach="mainroutes" t-as="menu">
+    <li><a t-att-href="'#'+menu"><t t-esc='menu'></t></a></li>
+  </t>
+</t>
+
+
+<t t-name="people-kanban">    
+    <table>
+    <tr><td><img src="./static/img/avatar.png" class="img-rounded boximg" width="100" height="100"/></td>
+    <td style="font-size:small;padding-left:3px;" valign="top">
+        
+        <t t-esc="record.name"/>,<br/>
+        <t t-esc="record.city"/>, <t t-esc="record.state"/>, <t t-esc="record.country"/><br/>
+        <t t-esc="record.email"/>
+    </td>
+    </tr>
+    </table>
+</t>
+<t t-name="homepage">
+     <div class="">
+          <h1>KM &amp; KK Savajani Collages.</h1>
+          <p>Elegant coatching &amp; sharing practical IT expirience.</p>
+          <hr/>
+          <p>
+            About Collage The need of the region comprising South Gujarat to have a separate university was voiced initially by educationists such as Atisukhshankar Trivedi who through public speeches and writings created awareness and gained support for this demand. This was immediately taken up and strongly supported by the Education societies of Surat and Navsari which already supported and managed colleges in various disciplines imparting both Undergraduate and Postgraduate education. Moreover, these were some of the most highly reputed academic centres under both the University of Bombay and the Gujarat University.
+
+The outcome of these moves was that at a meeting of educationsists and eminent citizens organized under the auspices of the Sarvajanik Education Society in Surat on July 31, 1960 a committee of 38 members was appointed to draw up guidelines and principles for the establishment of a separate university for South Gujarat. This document was submitted to the Chief Minister and Education Minister of Gujarat.
+
+When Dr. C. D. Deshmukh, the then chairperson of the University Grants Commission, visited Surat in December 1960, the same document was submitted to him. In February 1961 a submission entitled South Gujarat University : A Tentative Phased Programmed for its Establishement and Development was handed to the Education Minister. Further, at a meeting of this committee held in August 1962 a representational committee was appointed to explain the need, feasibility and urgency of the demand for a separat university for South Gujarat to the Education Minister. This committee popularly came to be known as the Lalbhai Committee after its Chairperson Shri L. R. Desai, Vice-Chancellor of Gujarat University who continued to chair first, the Evaluation Committee of 1964 and later, the Advisory Committee appointed under Veer Narmad South Gujarat University Act, 1965.
+          </p>
+        </div>
+</t>
+
+</template>

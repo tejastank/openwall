@@ -1,0 +1,14 @@
+// Note Models
+window.Note = Backbone.Model.extend({
+    defaults:{
+        "id":null,
+        "name":"",
+    }
+});
+// Collection
+var Notes = Backbone.Collection.extend({
+    model:Note,
+    columns:['ID','Name'],
+   // url: 'notes' // When use create method or related to it then we have to specifiy this.
+});
+
