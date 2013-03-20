@@ -60,7 +60,7 @@
     <tr><td><img src="./static/img/avatar.png" class="img-rounded boximg" width="100" height="100"/></td>
     <td style="font-size:small;padding-left:3px;" valign="top">
         
-        <t t-esc="record.name"/>,<br/>
+        <b><t t-esc="record.name"/></b>,<br/>
         <t t-esc="record.city"/>, <t t-esc="record.state"/>, <t t-esc="record.country"/><br/>
         <t t-esc="record.email"/>
     </td>
@@ -69,7 +69,7 @@
 </t>
 <t t-name="homepage">
      <div class="">
-          <h1>KM &amp; KK Savajani Collages.</h1>
+          <h1>OpenWall Collages or Schools.</h1>
           <p>Elegant coatching &amp; sharing practical IT expirience.</p>
           <hr/>
           <p>
